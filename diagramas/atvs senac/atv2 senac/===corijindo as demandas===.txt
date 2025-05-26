@@ -1,0 +1,22 @@
+===corijindo as demandas===
+
+SET SQL_SAFE_UPDATES = 0;
+
+== campo grande e londrina para salvador e goiania 
+UPDATE etapa
+SET localizacao = 'Salvador'
+WHERE idETAPA = 3;
+ 
+UPDATE etapa
+SET localizacao = 'Goiânia'
+WHERE idETAPA = 4;
+
+=== remover patrocinio 
+
+update equipe
+SET patrocinio = null
+WHERE idequipe = 5;
+
+
+=mostrar tabela de pilotos
+select * from piloto;

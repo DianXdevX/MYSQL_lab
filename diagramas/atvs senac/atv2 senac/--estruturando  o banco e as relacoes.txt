@@ -1,0 +1,57 @@
+--estruturando  o banco e as relações-- 
+
+====criando o banco de dados
+
+create database  tempkart ;
+use   tempkart ;
+====== tabela temporada
+
+create table  temporada (
+id  int not null   primary key auto_increment,
+numero int  not null );
+
+====tabela  etapa 
+
+create table Etapa (
+idETAPA int not null  auto_increment , 
+localizacao varchar(100),
+dat  date,
+hora  varchar(45),
+temporada  int ,
+primary key (idETAPA ),
+CONSTRAINT fk_temporada foreign key  (temporada) references temporada (id)
+);
+
+==== tabela do patrocinio 
+create table  patrocinio (
+idpatrocinio  int  not null auto_increment primary key,
+nomepatrocinio  varchar(45)
+
+);
+
+======= tabela  da equipe 
+
+create table  equipe (
+idequipe int  not null primary key auto_increment,
+nome  varchar(100),
+patrocinio int  null,
+constraint fk_patrocinio  foreign key (patrocinio) references  patrocinio (idpatrocinio )
+);
+======= tabela do piloto 
+create table  piloto (
+idpiloto  int primary key, 
+nome  varchar(150),
+peso float,
+capitao tinyint,
+equipe  int  not NULL ,
+nacionalidade  varchar(40),
+constraint fk_equipe  foreign key(equipe) references equipe (idequipe)
+
+===tabela has piloto 
+create table  etapa_has_piloto(
+etapa_idtapa int  not null ,
+piloto_idpilot int not null,
+PRIMARY KEY (etapa_idtapa, piloto_idpilot), 
+constraint FK_etapapiloto  foreign key(etapa_idtapa) references Etapa (idETAPA),
+constraint FK_pilotoetapa  foreign key(piloto_idpilot) references piloto (idpiloto)
+);
