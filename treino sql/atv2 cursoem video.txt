@@ -1,0 +1,19 @@
+1-lista dos gafanhos e suas profissões  seus  quantitativos (quantos sao de cada)
+select profissao, count(*) from gafanhotos 
+group by profissao ;
+
+2- quantos gafanhotos naceram   homes e mulheres  após 1 de jan de 2005 
+select sexo , count(*) from gafanhotos 
+where nascimento   > '2005-1-1' 
+group by sexo  ;
+
+3-lista de  pessoas que nasceram foa do brasil mostando o pais de origiel e o total de pessoas la  e so se tiver mais de 3 pessoas 
+select nacionalidade, count(nacionalidade)from gafanhotos 
+ where  nacionalidade not like 'Brasil'  
+group by  nacionalidade  
+having count(nacionalidade) >3;
+4-lista agrupada pela altura    mostando  quantas pessoas pesam mais de 100 kg e quantas estão acima da media de todos  os cadastrados
+select altura ,count(*) from gafanhotos 
+where  peso > 100 and altura > (select avg (altura) from gafanhotos)
+group by altura ;
+

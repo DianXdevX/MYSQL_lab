@@ -1,0 +1,46 @@
+1 -uma listas   com todas gafanhotas 
+r: select * from  gafanhotos
+where sexo  = 'F'
+
+
+2- uma listyas com os  dados  das pessoas  que naceram entre  1jan2000, e 31dez2015 
+r  select * from  gafanhotos
+where nascimento between '2000-01-01' and '2015-12-31' 
+
+
+
+
+3 umalista de todos os homens  programadores
+select * from  gafanhotos
+where   profissao like  'prog%' and  sexo  = 'M'  ;
+
+
+4 mulhres brasileiras com letra j 
+select * from  gafanhotos
+where  sexo = 'F' and nome  like '%j%';
+
+
+5 homens   com nome  silva  e nao naceram no brasil e  pesam  menso de  100 kg,
+
+select * from  gafanhotos
+where  sexo = 'M' and nome  like '%SILVA%' and  nacionalidade not like'Brasil';
+
+
+6 maior altura de gafantos homens brasileiros
+
+select max(altura) from  gafanhotos
+where  sexo = 'M'
+7 media de peso dos gafanhoros cadastrados
+  73 ou 74
+
+8 menor peso das mulheres  gringas  entre 01 jan 1990 e 31/dez/2000
+ 33.90
+select min(peso) from  gafanhotos
+where  nacionalidade not like  'Brasil' and nascimento between '1990-1-1' and  '2000-12-31';
+;
+
+9 -mulheres  com  altura  maior que 1.90 
+
+select * from  gafanhotos
+where sexo = 'f' and altura  >1.90 ;
+;
