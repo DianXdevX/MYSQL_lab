@@ -1,0 +1,22 @@
+create a  script in mysql 
+ the first  is a table to save pokemon tcg cards 
+and a second table   about colection 
+conect  to  tables  with a  FK 
+first table  tbl_cardatributes 
+ -hp
+ -name
+ -stage
+ -type
+ -info 
+ -atack
+ -damage 
+ -coletion number 
+- weak
+-resist 
+-retrat
+
+second table  colletion
+-id
+-colection_name 
+-relase date
+-total card 
